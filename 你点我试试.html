@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>作品列表</title>
+<link rel="stylesheet" href="main.css"/>
+</head>
+<body>
+<div class="wrap shadow">
+    <ol id="ol" class="list">
+    
+    </ol>
+</div>
+<script type="text/javascript">
+    var str = '',
+	//json数据列表
+        data = [
+            [
+                { url:'a/Tab选项卡切换/index.html', title : 'Tab选项卡切换' },
+                { url :'a/表单验证/index.html', title : '表单验证' },
+                { url : 'a/登陆页面/登陆页面1/index.html', title : '悬浮登陆页面' },
+                { url : 'a/登陆页面/登陆页面2/index.html', title : '切换方式登陆页面' },              
+                { url : 'a/手风琴/index.html', title : '手风琴效果' },
+				{ url : 'a/轮播图/index.html', title : '轮播图效果' },
+				{ url : 'a/王者荣耀导航菜单/index.html', title : '导航菜单' },
+				{ url : 'a/购物车/index.html', title : '购物车效果' },
+				{ url : 'a/淘宝样式/index.html', title : '淘宝样式' },
+				{ url : 'a/门户网站/index.html', title : '门户网站' },
+				{ url : 'a/企业后台管理/index.html', title : '后台管理系统' }
+			]
+           
+        ];
+    for(var i = 0; i < data.length; i++){
+		//获取到每一章节的数组
+        var items = data[i];
+        var sub = '';
+        for(var j=0; j<items.length; j++){
+			//遍历每一章节的数组
+            var son = items[j];
+            
+                sub += '<dd><a href="' + son.url + '" target="_blank" title="' + son.title + '">' + son.title + '</a></dd>';            
+        }
+        str += sub;
+    }
+	//列表运动
+
+    var ol = document.getElementById('ol');
+    ol.innerHTML = str;
+    var h1 = ol.getElementsByTagName('h1');
+    var dl = ol.getElementsByTagName('dl');
+    var tmp = -1;
+    var open = false;
+   
+
+</script>
+</body>
+</html>
